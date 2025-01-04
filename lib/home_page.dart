@@ -1,3 +1,4 @@
+import 'package:bmi_flutter/result_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -12,7 +13,7 @@ class _HomePageState extends State<HomePage> {
   Color bgColor = Color(0xff0A0E21);
   Color cardColor = Color(0xff111328);
   Color buttonColor = Color(0xffEB1555);
-  Color fontColor = Color(0xff9D9EA6);
+
   bool isMale=true;
   int weight=60;
   int age = 26;
@@ -217,7 +218,9 @@ class _HomePageState extends State<HomePage> {
                 double h  = height/100;
                 double hSquare = h*h;
                 double result = weight/hSquare;
+                //String res=result.toStringAsFixed(2);
                 print('Our result is: ${result}');
+                Navigator.push(context, MaterialPageRoute(builder: (context)=> ResultPage(result)));
               },
               child: Container(
                 color: buttonColor,
