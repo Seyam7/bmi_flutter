@@ -11,8 +11,8 @@ class ResultPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String status;
-    if(result > 18.5){
+    String status = 'Unknown';
+    if(result < 18.5){
       status='Underweight';
     }
     else if(result>=18.5 && 25>result){
@@ -49,7 +49,7 @@ class ResultPage extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Text('status',style: TextStyle(color: Colors.green,fontSize: 30),),
+                  Text('$status',style: TextStyle(color: Colors.green,fontSize: 30),),
                   Text('$result',style: TextStyle(color: Colors.white,fontSize: 55),),
                   Text('You have a normal body weight',style: TextStyle(color: Colors.white,),),
                 ],
