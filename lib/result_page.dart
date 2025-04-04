@@ -12,14 +12,18 @@ class ResultPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     String status = 'Unknown';
+    String comment='';
     if(result < 18.5){
       status='Underweight';
+      comment='You\'re underweight. It might be helpful to include more nutritious meals in your diet and consult a healthcare provider for personalized advice.';
     }
     else if(result>=18.5 && 25>result){
       status='Normal';
+      comment='Great job! Your BMI is within the normal range. Keep maintaining a balanced diet and an active lifestyle for optimal health!';
     }
     else if(result>=25){
       status='Overweight';
+      comment='You are slightly overweight. Regular exercise and a healthy diet can help you maintain a balanced weight. Consider making small lifestyle changes for long-term benefits.';
     }
     return Scaffold(
       backgroundColor: bgColor,
@@ -50,8 +54,15 @@ class ResultPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Text('$status',style: TextStyle(color: Colors.green,fontSize: 30),),
-                  Text('$result',style: TextStyle(color: Colors.white,fontSize: 55),),
-                  Text('You have a normal body weight',style: TextStyle(color: Colors.white,),),
+                  Text('${result.toStringAsFixed(2)}',style: TextStyle(color: Colors.white,fontSize: 55),),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: Text(
+                      '$comment',
+                      textAlign: TextAlign.justify,
+                      style: TextStyle(color: Colors.greenAccent,),
+                    ),
+                  ),
                 ],
               ),
             ),
