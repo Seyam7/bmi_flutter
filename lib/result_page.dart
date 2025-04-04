@@ -28,6 +28,7 @@ class ResultPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: bgColor,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: bgColor,
         title: Center(
           child: Text(
@@ -54,7 +55,7 @@ class ResultPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Text('$status',style: TextStyle(color: Colors.green,fontSize: 30),),
-                  Text('${result.toStringAsFixed(2)}',style: TextStyle(color: Colors.white,fontSize: 55),),
+                  Text('${result.toStringAsFixed(1)}',style: TextStyle(color: Colors.white,fontSize: 55),),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: Text(
