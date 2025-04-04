@@ -1,6 +1,5 @@
 import 'package:bmi_flutter/result_page.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -10,9 +9,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  Color bgColor = Color(0xff0A0E21);
-  Color cardColor = Color(0xff111328);
-  Color buttonColor = Color(0xffEB1555);
+  Color bgColor = const Color(0xff0A0E21);
+  Color cardColor = const Color(0xff111328);
+  Color buttonColor = const Color(0xffEB1555);
 
   bool isMale=true;
   int weight=60;
@@ -25,7 +24,7 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: bgColor,
       appBar: AppBar(
         backgroundColor: bgColor,
-        title: Center(
+        title: const Center(
           child: Text(
             'BMI Calculator',
             style: TextStyle(
@@ -38,51 +37,49 @@ class _HomePageState extends State<HomePage> {
         children: [
           Expanded(
             flex: 10,
-            child: Container(
-              child: Row(
-                children: [
-                  Expanded(
-                    flex: 5,
-                    child: InkWell(
-                      onTap: (){
-                        setState(() {
-                          isMale=true;
-                        });
-                      },
-                      child: Card(
-                        color: isMale==true? Colors.teal[700]:cardColor,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(Icons.male,size: 50,color: Colors.white,),
-                            Text('Male',style: TextStyle(color: Colors.white),),
-                          ],
-                        ),
+            child: Row(
+              children: [
+                Expanded(
+                  flex: 5,
+                  child: InkWell(
+                    onTap: (){
+                      setState(() {
+                        isMale=true;
+                      });
+                    },
+                    child: Card(
+                      color: isMale==true? Colors.teal[700]:cardColor,
+                      child: const Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(Icons.male,size: 50,color: Colors.white,),
+                          Text('Male',style: TextStyle(color: Colors.white),),
+                        ],
                       ),
                     ),
                   ),
-                  Expanded(
-                    flex: 5,
-                    child: InkWell(
-                      onTap: (){
-                        setState(() {
-                          isMale=false;
-                        });
-                      },
-                      child: Card(
-                        color: isMale==false? Colors.teal[700]:cardColor,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(Icons.female,size: 50,color: Colors.white,),
-                            Text('Female',style: TextStyle(color: Colors.white),),
-                          ],
-                        ),
+                ),
+                Expanded(
+                  flex: 5,
+                  child: InkWell(
+                    onTap: (){
+                      setState(() {
+                        isMale=false;
+                      });
+                    },
+                    child: Card(
+                      color: isMale==false? Colors.teal[700]:cardColor,
+                      child: const Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(Icons.female,size: 50,color: Colors.white,),
+                          Text('Female',style: TextStyle(color: Colors.white),),
+                        ],
                       ),
                     ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
           Expanded(
@@ -98,9 +95,9 @@ class _HomePageState extends State<HomePage> {
                     crossAxisAlignment: CrossAxisAlignment.baseline,
                     textBaseline: TextBaseline.alphabetic,
                     children: [
-                      Text('$height',style: TextStyle(color: Colors.white,fontSize: 50),),
-                      SizedBox(width: 5,),
-                      Text('cm',style: TextStyle(color: Colors.white),),
+                      Text('$height',style: const TextStyle(color: Colors.white,fontSize: 50),),
+                      const SizedBox(width: 5,),
+                      const Text('cm',style: TextStyle(color: Colors.white),),
                     ],
                   ),
                   Slider(
@@ -131,8 +128,8 @@ class _HomePageState extends State<HomePage> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text('Weight',style: TextStyle(color: Colors.white),),
-                          Text('$weight',style: TextStyle(color: Colors.white,fontSize: 50),),
+                          const Text('Weight',style: TextStyle(color: Colors.white),),
+                          Text('$weight',style: const TextStyle(color: Colors.white,fontSize: 50),),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
@@ -144,10 +141,10 @@ class _HomePageState extends State<HomePage> {
                                     });
                                   }
                                 },
-                                shape: CircleBorder(),
+                                shape: const CircleBorder(),
                                 mini: true,
                                 backgroundColor: Colors.white12,
-                                child: Icon(Icons.remove,color: Colors.white,),
+                                child: const Icon(Icons.remove,color: Colors.white,),
                               ),
                               FloatingActionButton(
                                   onPressed: (){
@@ -156,9 +153,9 @@ class _HomePageState extends State<HomePage> {
                                     });
                                   },
                                 mini: true,
-                                shape: CircleBorder(),
+                                shape: const CircleBorder(),
                                 backgroundColor: Colors.white12,
-                                child: Icon(Icons.add,color: Colors.white,),
+                                child: const Icon(Icons.add,color: Colors.white,),
                               ),
                             ],
                           ),
@@ -173,8 +170,8 @@ class _HomePageState extends State<HomePage> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text('Age',style: TextStyle(color: Colors.white),),
-                        Text('$age',style: TextStyle(color: Colors.white,fontSize: 50),),
+                        const Text('Age',style: TextStyle(color: Colors.white),),
+                        Text('$age',style: const TextStyle(color: Colors.white,fontSize: 50),),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -187,9 +184,9 @@ class _HomePageState extends State<HomePage> {
                                 }
                               },
                               mini: true,
-                              shape: CircleBorder(),
+                              shape: const CircleBorder(),
                               backgroundColor: Colors.white12,
-                              child: Icon(Icons.remove,color: Colors.white,),
+                              child: const Icon(Icons.remove,color: Colors.white,),
                             ),
                             FloatingActionButton(
                               onPressed: (){
@@ -197,10 +194,10 @@ class _HomePageState extends State<HomePage> {
                                   age++;
                                 });
                               },
-                              shape: CircleBorder(),
+                              shape: const CircleBorder(),
                               mini: true,
                               backgroundColor: Colors.white12,
-                              child: Icon(Icons.add,color: Colors.white,),
+                              child: const Icon(Icons.add,color: Colors.white,),
                             ),
                           ],
                         ),
@@ -218,13 +215,11 @@ class _HomePageState extends State<HomePage> {
                 double h  = height/100;
                 double hSquare = h*h;
                 double result = weight/hSquare;
-                //String res=result.toStringAsFixed(2);
-                print('Our result is: ${result}');
                 Navigator.push(context, MaterialPageRoute(builder: (context)=> ResultPage(result)));
               },
               child: Container(
                 color: buttonColor,
-                child: Center(child: Text('CALCULATE',style: TextStyle(fontSize: 20,color: Colors.white),),),
+                child: const Center(child: Text('CALCULATE',style: TextStyle(fontSize: 20,color: Colors.white),),),
               ),
             ),
           ),

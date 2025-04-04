@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 class ResultPage extends StatelessWidget {
 
-  Color bgColor = Color(0xff0A0E21);
-  Color cardColor = Color(0xff111328);
-  Color buttonColor = Color(0xffEB1555);
+  Color bgColor = const Color(0xff0A0E21);
+  Color cardColor = const Color(0xff111328);
+  Color buttonColor = const Color(0xffEB1555);
 
   late final double result;
-  ResultPage(this.result);
+  ResultPage(this.result, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,7 @@ class ResultPage extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: bgColor,
-        title: Center(
+        title: const Center(
           child: Text(
             'BMI Calculator',
             style: TextStyle(
@@ -43,7 +43,7 @@ class ResultPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         //crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Expanded(
+          const Expanded(
             flex: 2,
             child: Center(child: Text('Your result',style: TextStyle(fontSize: 60,color: Colors.white),)),
           ),
@@ -54,21 +54,21 @@ class ResultPage extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Text('$status',style: TextStyle(color: Colors.green,fontSize: 30),),
-                  Text('${result.toStringAsFixed(1)}',style: TextStyle(color: Colors.white,fontSize: 55),),
+                  Text(status,style: const TextStyle(color: Colors.green,fontSize: 30),),
+                  Text(result.toStringAsFixed(1),style: const TextStyle(color: Colors.white,fontSize: 55),),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: Text(
-                      '$comment',
+                      comment,
                       textAlign: TextAlign.justify,
-                      style: TextStyle(color: Colors.greenAccent,),
+                      style: const TextStyle(color: Colors.greenAccent,),
                     ),
                   ),
                 ],
               ),
             ),
           ),
-          SizedBox(height: 10,),
+          const SizedBox(height: 10,),
           Expanded(
             flex: 1,
             child: InkWell(
@@ -76,8 +76,8 @@ class ResultPage extends StatelessWidget {
                 Navigator.pop(context);
               },
               child: Container(
-                color: Color(0xffEB1555),
-                child: Center(child: Text('RE-CALCULATE',style: TextStyle(fontSize: 20,color: Colors.white),),),
+                color: const Color(0xffEB1555),
+                child: const Center(child: Text('RE-CALCULATE',style: TextStyle(fontSize: 20,color: Colors.white),),),
               ),
             ),
           ),
