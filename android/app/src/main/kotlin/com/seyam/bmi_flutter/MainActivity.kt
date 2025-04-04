@@ -1,4 +1,4 @@
-package com.example.bmi_flutter
+package com.seyam.bmi_flutter
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 class ResultPage extends StatelessWidget {
 
-  Color bgColor = const Color(0xff0A0E21);
-  Color cardColor = const Color(0xff111328);
-  Color buttonColor = const Color(0xffEB1555);
+  Color bgColor =  const Color(0xff0A0E21);
+  Color cardColor =  const Color(0xff111328);
+  Color buttonColor =  const Color(0xffEB1555);
 
   late final double result;
   ResultPage(this.result, {super.key});
